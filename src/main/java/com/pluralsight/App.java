@@ -17,15 +17,14 @@ public class App {
         Statement statement = connection.createStatement();
 
         // define your query
-        String query = "SELECT city FROM city " +
-                "WHERE CountryCode = 'USA'";
+        String query = "SELECT city FROM city ";
 
         // 2. Execute your query
         ResultSet results = statement.executeQuery(query);
 
         // process the results
         while (results.next()) {
-            String city = results.getString("Name");
+            String city = results.getString("city");
             System.out.println(city);
         }
 
