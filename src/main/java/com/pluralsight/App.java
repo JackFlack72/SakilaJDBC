@@ -7,25 +7,29 @@ public class App {
     public static void main(String[] args) throws SQLException {
         String url = "jdbc:mysql://localhost:3306/sakila";
         String username = "root";
-        String password = "";
+        String password = "yearup";
 
         //1. open a connection to the database
         Connection connection = DriverManager.getConnection(url, username, password);
 
-    // create statement
-    // the statement is tied to the open connection
+        // create statement
+        // the statement is tied to the open connection
         Statement statement = connection.createStatement();
-    // define your query
+
+        // define your query
         String query = "SELECT city FROM city " +
                 "WHERE CountryCode = 'USA'";
-    // 2. Execute your query
+
+        // 2. Execute your query
         ResultSet results = statement.executeQuery(query);
-    // process the results
+
+        // process the results
         while (results.next()) {
             String city = results.getString("Name");
             System.out.println(city);
         }
-    // 3. Close the connection
+
+        // 3. Close the connection
         connection.close();
 
     }
