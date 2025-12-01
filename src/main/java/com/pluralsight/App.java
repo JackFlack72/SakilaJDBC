@@ -1,5 +1,8 @@
 package com.pluralsight;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+
 public class App {
 
     public static void main(String[] args) {
@@ -8,6 +11,6 @@ public class App {
         String password = "";
 
         //1. open a connection to the database
-        Connection connection = DriveManager.getConnection(url, username, password);
+        Connection connection = DriverManager.getConnection(url, username, password);
     }
 }
